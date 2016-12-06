@@ -1,0 +1,9 @@
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\bin\Debug\SpartanController.exe.config
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\bin\Debug\SpartanController.exe
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\bin\Debug\SpartanController.pdb
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.csprojResolveAssemblyReference.cache
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.Form1.resources
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.Properties.Resources.resources
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.csproj.GenerateResource.Cache
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.exe
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.pdb

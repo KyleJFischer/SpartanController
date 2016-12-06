@@ -1,0 +1,12 @@
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\bin\Release\SpartanController.exe.config
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\bin\Release\SpartanController.exe
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\bin\Release\SpartanController.pdb
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.Properties.Resources.resources
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.csproj.GenerateResource.Cache
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.exe
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.pdb
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.csprojResolveAssemblyReference.cache
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.multiCommandWizard.resources
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.editCommandWizard.resources
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.MainWindow.resources
+D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Release\SpartanController.SettingsPage.resources

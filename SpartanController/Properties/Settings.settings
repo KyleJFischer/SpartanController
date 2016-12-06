@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SpartanController.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\SpartanController\commands.xml</Value>
+    </Setting>
+    <Setting Name="lockdownEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="shutdownEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FolderLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Dropbox\Dropbox\controlcomputer</Value>
+    </Setting>
+    <Setting Name="restartEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
