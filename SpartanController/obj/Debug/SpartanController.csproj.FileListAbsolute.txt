@@ -7,3 +7,16 @@ D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanCon
 D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.csproj.GenerateResource.Cache
 D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.exe
 D:\Users\Kyle\Documents\Visual Studio 2015\Projects\SpartanController\SpartanController\obj\Debug\SpartanController.pdb
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\bin\Debug\SpartanController.exe.config
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\bin\Debug\SpartanController.exe
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\bin\Debug\SpartanController.pdb
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.csprojResolveAssemblyReference.cache
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.editCommandWizard.resources
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.MainWindow.resources
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.multiCommandWizard.resources
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.Properties.Resources.resources
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.SettingsPage.resources
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.csproj.GenerateResource.Cache
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.csproj.CoreCompileInputs.cache
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.exe
+D:\CodingProjects\SpartanController\SpartanController\SpartanController\obj\Debug\SpartanController.pdb

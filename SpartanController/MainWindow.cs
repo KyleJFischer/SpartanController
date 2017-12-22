@@ -219,12 +219,19 @@ namespace SpartanController
         {
             if (File.Exists(path))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Command>));
-                FileStream fs = new FileStream(path, FileMode.Open);
-                List<Command> temp = (List<Command>)serializer.Deserialize(fs);
-                commands.AddRange(temp);
-                populateListBox();
-                fs.Close();
+                try
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Command>));
+                    FileStream fs = new FileStream(path, FileMode.Open);
+                    List<Command> temp = (List<Command>)serializer.Deserialize(fs);
+                    commands.AddRange(temp);
+                    populateListBox();
+                    fs.Close();
+                } catch (Exception e)
+                {
+                    Console.WriteLine("Error Loading File");
+                }
+             
             }
         }
 
