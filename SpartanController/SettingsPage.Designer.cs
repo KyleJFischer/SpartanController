@@ -38,6 +38,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.restartCheckBox = new System.Windows.Forms.CheckBox();
+            this.startMiniCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // browseCommandLocation
@@ -114,11 +115,23 @@
             this.restartCheckBox.Text = "Restart Mode";
             this.restartCheckBox.UseVisualStyleBackColor = true;
             // 
+            // startMiniCheckbox
+            // 
+            this.startMiniCheckbox.AutoSize = true;
+            this.startMiniCheckbox.Location = new System.Drawing.Point(22, 210);
+            this.startMiniCheckbox.Name = "startMiniCheckbox";
+            this.startMiniCheckbox.Size = new System.Drawing.Size(70, 17);
+            this.startMiniCheckbox.TabIndex = 8;
+            this.startMiniCheckbox.Text = "Start Mini";
+            this.startMiniCheckbox.UseVisualStyleBackColor = true;
+            this.startMiniCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // SettingsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 307);
+            this.Controls.Add(this.startMiniCheckbox);
             this.Controls.Add(this.restartCheckBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.shutdownModeEnabled);
@@ -151,5 +164,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.CheckBox restartCheckBox;
+        private System.Windows.Forms.CheckBox startMiniCheckbox;
     }
 }

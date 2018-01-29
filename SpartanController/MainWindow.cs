@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using System.Xml.Serialization;
+using System.Timers;
 
 namespace SpartanController
 {
@@ -13,6 +14,7 @@ namespace SpartanController
 
         static List<Command> commands = new List<Command>();
         static List<string> commandsForList = new List<string>();
+        static DateTime lastTimeRan = DateTime.MinValue;
         bool saveUponExit = true;
        
         DateTime latestCommandTime = DateTime.Now;
@@ -29,7 +31,12 @@ namespace SpartanController
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = true;
-
+            if (Properties.Settings.Default.startMinimized)
+            {
+                
+                this.WindowState = FormWindowState.Minimized;
+                this.Hide();
+            }
            
 
             CreateFileWatcher(Properties.Settings.Default.FolderLocation);
@@ -69,7 +76,7 @@ namespace SpartanController
         {
             int counter = 0;
             string line;
-
+            
             // Read the file and display it line by line.  
             System.IO.StreamReader file =
                 new System.IO.StreamReader(path);
@@ -194,17 +201,32 @@ namespace SpartanController
 
             // Begin watching.
             watcher.EnableRaisingEvents = true;
+            
         }
 
+       
         // Define the event handlers.
         private static void OnChanged(object source, FileSystemEventArgs e)
         {
-            launchTaskControlFile(e.FullPath);
+
+            var lastTimeAccessed = File.GetLastWriteTime(e.FullPath);
+            var diffInSeconds = (lastTimeAccessed - lastTimeRan).TotalSeconds;
+            if (diffInSeconds > 2.0)
+            {
+                lastTimeRan = lastTimeAccessed;
+                launchTaskControlFile(e.FullPath);
+            }
+            
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.createNewBasicCommand(commandTextBox.Text, pathTextBox.Text);
+            if (!String.IsNullOrWhiteSpace(commandTextBox.Text))
+            {
+                this.createNewBasicCommand(commandTextBox.Text, pathTextBox.Text);
+            }
+            
             
         }
 
@@ -229,7 +251,11 @@ namespace SpartanController
                     fs.Close();
                 } catch (Exception e)
                 {
-                    Console.WriteLine("Error Loading File");
+                    string message = e.Message;
+                    const string caption = "Error Loading Commands from File!";
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Error);
                 }
              
             }
@@ -271,12 +297,20 @@ namespace SpartanController
 
         private void button3_Click(object sender, EventArgs e)
         {
-            commands.RemoveAt(listBox1.SelectedIndex);
+            if (listBox1.SelectedIndex >= 0)
+            {
+                commands.RemoveAt(listBox1.SelectedIndex);
+            }
+            
             populateListBox();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex < 0)
+            {
+                return;
+            }
             commands[listBox1.SelectedIndex].execute();
         }
 

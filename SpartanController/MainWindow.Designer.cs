@@ -44,6 +44,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.saveExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitWOSavingCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.importCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CommandDelayTimer = new System.Windows.Forms.Timer(this.components);
+            this.DelayFileTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,7 +140,7 @@
             this.notifyIcon1.BalloonTipText = "Double click to show panel";
             this.notifyIcon1.BalloonTipTitle = "Spartan Controller";
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "Spartan Controller";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
@@ -189,6 +191,13 @@
             this.saveCommandsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.saveCommandsToolStripMenuItem.Text = "Save Commands";
             this.saveCommandsToolStripMenuItem.Click += new System.EventHandler(this.saveCommandsToolStripMenuItem_Click);
+            // 
+            // importCommandsToolStripMenuItem
+            // 
+            this.importCommandsToolStripMenuItem.Name = "importCommandsToolStripMenuItem";
+            this.importCommandsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.importCommandsToolStripMenuItem.Text = "Import Commands";
+            this.importCommandsToolStripMenuItem.Click += new System.EventHandler(this.importCommandsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -258,12 +267,9 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Type";
             // 
-            // importCommandsToolStripMenuItem
+            // DelayFileTimer
             // 
-            this.importCommandsToolStripMenuItem.Name = "importCommandsToolStripMenuItem";
-            this.importCommandsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.importCommandsToolStripMenuItem.Text = "Import Commands";
-            this.importCommandsToolStripMenuItem.Click += new System.EventHandler(this.importCommandsToolStripMenuItem_Click);
+            this.DelayFileTimer.Interval = 1000;
             // 
             // MainWindow
             // 
@@ -284,6 +290,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "SpartanController";
@@ -323,6 +330,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem importCommandsToolStripMenuItem;
+        private System.Windows.Forms.Timer CommandDelayTimer;
+        private System.Windows.Forms.Timer DelayFileTimer;
     }
 }
 

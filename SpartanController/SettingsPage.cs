@@ -25,6 +25,7 @@ namespace SpartanController
             restartCheckBox.Checked = Properties.Settings.Default.restartEnabled;
             folderlocationtextbox.Text = Properties.Settings.Default.FolderLocation;
             commandSaveTextbox.Text = Properties.Settings.Default.FilePath;
+            startMiniCheckbox.Checked = Properties.Settings.Default.startMinimized;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace SpartanController
             Properties.Settings.Default.shutdownEnabled = shutdownModeEnabled.Checked;
             Properties.Settings.Default.FolderLocation = folderlocationtextbox.Text;
             Properties.Settings.Default.restartEnabled = restartCheckBox.Checked;
+            Properties.Settings.Default.startMinimized = startMiniCheckbox.Checked;
             Properties.Settings.Default.Save();
             this.Close();
 
@@ -59,6 +61,11 @@ namespace SpartanController
             {
                 folderlocationtextbox.Text = folderBrowserDialog1.SelectedPath;
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
