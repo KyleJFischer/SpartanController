@@ -26,6 +26,7 @@ namespace SpartanController
             folderlocationtextbox.Text = Properties.Settings.Default.FolderLocation;
             commandSaveTextbox.Text = Properties.Settings.Default.FilePath;
             startMiniCheckbox.Checked = Properties.Settings.Default.startMinimized;
+            delayField.Text = Properties.Settings.Default.delay.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,6 +37,17 @@ namespace SpartanController
             Properties.Settings.Default.FolderLocation = folderlocationtextbox.Text;
             Properties.Settings.Default.restartEnabled = restartCheckBox.Checked;
             Properties.Settings.Default.startMinimized = startMiniCheckbox.Checked;
+
+            int i = 0;
+            int _i = Properties.Settings.Default.delay;
+            if (Int32.TryParse(delayField.Text, out i))
+            {
+                //continue; if failed, will put in original value
+            }
+
+            if (i != 0) Properties.Settings.Default.delay = i;
+            else Properties.Settings.Default.delay = _i;
+
             Properties.Settings.Default.Save();
             this.Close();
 
