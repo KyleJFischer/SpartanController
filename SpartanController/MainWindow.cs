@@ -5,13 +5,17 @@ using System.IO;
 using System.Diagnostics;
 using System.Xml.Serialization;
 using System.Timers;
+using System.Threading;
 
 namespace SpartanController
 {
     public partial class MainWindow : Form
     {
-
-
+        private delegate void SafeCallDelegate(string text);
+        /// <summary>
+        /// Display a warning at the bottom of the program by setting this string to your warning. Be sure to clear it!
+        /// </summary>
+        static string warning;
         static List<Command> commands = new List<Command>();
         static List<string> commandsForList = new List<string>();
         static DateTime lastTimeRan = DateTime.MinValue;
@@ -20,6 +24,27 @@ namespace SpartanController
         DateTime latestCommandTime = DateTime.Now;
         
         bool lockDownEnabled = Properties.Settings.Default.lockdownEnabled;
+
+        System.Timers.Timer updateTimer = new System.Timers.Timer(1000);
+
+
+        private void UpdateWarning(object sender, ElapsedEventArgs e)
+        {
+            WriteTextSafe(warning);
+        }
+
+        private void WriteTextSafe(string text)
+        {
+            if (warningText.InvokeRequired)
+            {
+                var d = new SafeCallDelegate(WriteTextSafe);
+                warningText.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                warningText.Text = text;
+            }
+        }
 
         public MainWindow()
         {
@@ -45,6 +70,8 @@ namespace SpartanController
             listBox1.DataSource = commandsForList;
             refreshListBox();
 
+            updateTimer.Elapsed += UpdateWarning;
+            updateTimer.Start();
         }
 
         private void createNewBasicCommand(String command, string path)
@@ -76,10 +103,26 @@ namespace SpartanController
         {
             int counter = 0;
             string line;
-            
+            System.IO.StreamReader file;
+
+            // Arylos:
+            // This is an imperfect solution to issue #2.
+            // This is caused by Dropbox still updating the file when the controller tries to read it.
+            // Here, try and read the file, if it failes, sleep and try again after Dropbox has finished.
+            // If there is a trigger for when Dropbox is finished, that should be used.
+            try
+            {
+                file = new System.IO.StreamReader(path);
+            }
+            catch (System.IO.IOException)
+            {
+                warning = "Waiting on Dropbox to finish...";
+                Thread.Sleep(Properties.Settings.Default.delay * 1000);
+                file = new System.IO.StreamReader(path);
+            }
+            warning = string.Empty;
+
             // Read the file and display it line by line.  
-            System.IO.StreamReader file =
-                new System.IO.StreamReader(path);
             String nonNullLastCommand = "";
             while ((line = file.ReadLine()) != null)
             {
@@ -211,7 +254,8 @@ namespace SpartanController
 
             var lastTimeAccessed = File.GetLastWriteTime(e.FullPath);
             var diffInSeconds = (lastTimeAccessed - lastTimeRan).TotalSeconds;
-            if (diffInSeconds > 2.0)
+            // TODO: This does not seem to work, as it will access the file anyway, even with an increased value
+            if (diffInSeconds > 5.0)
             {
                 lastTimeRan = lastTimeAccessed;
                 launchTaskControlFile(e.FullPath);

@@ -39,6 +39,9 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.restartCheckBox = new System.Windows.Forms.CheckBox();
             this.startMiniCheckbox = new System.Windows.Forms.CheckBox();
+            this.delayField = new System.Windows.Forms.TextBox();
+            this.DelayLabel = new System.Windows.Forms.Label();
+            this.delayAdvisory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // browseCommandLocation
@@ -97,7 +100,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(356, 272);
+            this.button1.Location = new System.Drawing.Point(397, 272);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -126,12 +129,41 @@
             this.startMiniCheckbox.UseVisualStyleBackColor = true;
             this.startMiniCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // delayField
+            // 
+            this.delayField.Location = new System.Drawing.Point(22, 234);
+            this.delayField.Name = "delayField";
+            this.delayField.Size = new System.Drawing.Size(30, 20);
+            this.delayField.TabIndex = 9;
+            // 
+            // DelayLabel
+            // 
+            this.DelayLabel.AutoSize = true;
+            this.DelayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.DelayLabel.Location = new System.Drawing.Point(58, 237);
+            this.DelayLabel.Name = "DelayLabel";
+            this.DelayLabel.Size = new System.Drawing.Size(84, 13);
+            this.DelayLabel.TabIndex = 10;
+            this.DelayLabel.Text = "Execution Delay";
+            // 
+            // delayAdvisory
+            // 
+            this.delayAdvisory.AutoSize = true;
+            this.delayAdvisory.Location = new System.Drawing.Point(58, 256);
+            this.delayAdvisory.Name = "delayAdvisory";
+            this.delayAdvisory.Size = new System.Drawing.Size(310, 13);
+            this.delayAdvisory.TabIndex = 11;
+            this.delayAdvisory.Text = "If running a command crashes the controller, increase this value.";
+            // 
             // SettingsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 307);
+            this.Controls.Add(this.delayAdvisory);
+            this.Controls.Add(this.DelayLabel);
             this.Controls.Add(this.startMiniCheckbox);
+            this.Controls.Add(this.delayField);
             this.Controls.Add(this.restartCheckBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.shutdownModeEnabled);
@@ -165,5 +197,8 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.CheckBox restartCheckBox;
         private System.Windows.Forms.CheckBox startMiniCheckbox;
+        private System.Windows.Forms.TextBox delayField;
+        private System.Windows.Forms.Label DelayLabel;
+        private System.Windows.Forms.Label delayAdvisory;
     }
 }

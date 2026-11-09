@@ -56,6 +56,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CommandDelayTimer = new System.Windows.Forms.Timer(this.components);
             this.DelayFileTimer = new System.Windows.Forms.Timer(this.components);
+            this.warningText = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,47 +182,47 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // saveCommandsToolStripMenuItem
             // 
             this.saveCommandsToolStripMenuItem.Name = "saveCommandsToolStripMenuItem";
-            this.saveCommandsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.saveCommandsToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.saveCommandsToolStripMenuItem.Text = "Save Commands";
             this.saveCommandsToolStripMenuItem.Click += new System.EventHandler(this.saveCommandsToolStripMenuItem_Click);
             // 
             // importCommandsToolStripMenuItem
             // 
             this.importCommandsToolStripMenuItem.Name = "importCommandsToolStripMenuItem";
-            this.importCommandsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.importCommandsToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.importCommandsToolStripMenuItem.Text = "Import Commands";
             this.importCommandsToolStripMenuItem.Click += new System.EventHandler(this.importCommandsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(220, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // saveExitToolStripMenuItem
             // 
             this.saveExitToolStripMenuItem.Name = "saveExitToolStripMenuItem";
-            this.saveExitToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.saveExitToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.saveExitToolStripMenuItem.Text = "Save Exit";
             this.saveExitToolStripMenuItem.Click += new System.EventHandler(this.saveExitToolStripMenuItem_Click);
             // 
             // exitWOSavingCommandsToolStripMenuItem
             // 
             this.exitWOSavingCommandsToolStripMenuItem.Name = "exitWOSavingCommandsToolStripMenuItem";
-            this.exitWOSavingCommandsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.exitWOSavingCommandsToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.exitWOSavingCommandsToolStripMenuItem.Text = "Exit W/O Saving Commands";
             this.exitWOSavingCommandsToolStripMenuItem.Click += new System.EventHandler(this.exitWOSavingCommandsToolStripMenuItem_Click);
             // 
             // iFTTTToolStripMenuItem
             // 
             this.iFTTTToolStripMenuItem.Name = "iFTTTToolStripMenuItem";
-            this.iFTTTToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.iFTTTToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.iFTTTToolStripMenuItem.Text = "IFTTT";
             this.iFTTTToolStripMenuItem.Click += new System.EventHandler(this.iFTTTToolStripMenuItem_Click);
             // 
@@ -271,11 +272,22 @@
             // 
             this.DelayFileTimer.Interval = 1000;
             // 
+            // warningText
+            // 
+            this.warningText.AutoSize = true;
+            this.warningText.BackColor = System.Drawing.SystemColors.Control;
+            this.warningText.ForeColor = System.Drawing.Color.Red;
+            this.warningText.Location = new System.Drawing.Point(23, 409);
+            this.warningText.Name = "warningText";
+            this.warningText.Size = new System.Drawing.Size(0, 13);
+            this.warningText.TabIndex = 14;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 431);
+            this.Controls.Add(this.warningText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -332,6 +344,7 @@
         private System.Windows.Forms.ToolStripMenuItem importCommandsToolStripMenuItem;
         private System.Windows.Forms.Timer CommandDelayTimer;
         private System.Windows.Forms.Timer DelayFileTimer;
+        private System.Windows.Forms.Label warningText;
     }
 }
 
